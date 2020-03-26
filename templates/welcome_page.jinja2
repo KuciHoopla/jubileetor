@@ -1,0 +1,31 @@
+{% extends "_main.jinja2" %}
+
+{% block title %} Jubileetor {% endblock %}
+
+
+{% block main %}
+    <div class="container" style="padding: 30px;">
+       {% if customers_data %}
+
+
+        {% for x in customers_data %}
+	        <div class="card" style="width: 18rem; margin-bottom: 30px; background-color: #007bff">
+	         <div style="display: flex; align-items: center; " class="card-body">
+	                <img style="width: 80px; border-radius: 50%;" src="static/photos/profile_photos/{{x[2]}}.jpg"
+		         class="card-img-top" alt="customer photo">
+		         <p style="margin-left: 20px; color: whitesmoke" class="card-text">{{ x[0]}}</p>
+	         </div>
+		        <img src="{{ url_for("static", filename=x[1]) }}" class="card-img-top" alt="customer photo">
+
+			</div>
+
+        {% endfor %}
+
+        {% else %}
+             <div class="container">
+                <p> I do not want anything </p>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}

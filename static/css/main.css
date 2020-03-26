@@ -1,0 +1,12 @@
+body{
+    background: #1d2124;
+    color: #bee5eb;
+}
+
+#customer_photo {
+    height: 200px;
+}
+
+main{
+    margin-top: 100px;
+}
